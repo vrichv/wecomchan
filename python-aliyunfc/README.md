@@ -28,19 +28,20 @@
 
 将以下内容以 json 格式 POST 到函数的公网访问地址即可.
 
-| 字段 | 说明                                              | 是否必须        |
-| ---- | ------------------------------------------------- | --------------- |
-| key  | 设置的 sendkey                                    | 是              |
-| type | text, image, markdown 或 file 其中之一            | 否, 默认为 text |
-| msg  | 消息主体(需要推送的文本或图片/文件的 Base64 编码) | 是              |
+| 字段  | 说明                                              | 是否必须        |
+| ----- | ------------------------------------------------- | --------------- |
+| key   | 设置的 sendkey                                    | 是              |
+| type  | text, image, markdown 或 file 其中之一            | 否, 默认为 text |
+| msg   | 消息主体(需要推送的文本或图片/文件的 Base64 编码) | 是              |
+| touser| 指定发送到的用户ID                                | 否，默认为全体  |
 
 例:
 
 ```
-{"key":"123", "msg": "Hello, World!"}
+{"key":"123", "msg": "Hello, World!","touser": "someUserId"}
 ```
 
 ```
-{"key":"123", "type": "markdown", "msg": "**Markdown Here!**"}
+{"key":"123", "type": "markdown", "msg": "**Markdown Here!**","touser": "someUserId"}
 ```
 
